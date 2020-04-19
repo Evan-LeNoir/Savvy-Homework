@@ -1,4 +1,4 @@
-let numberOfToppings = 10;
+let numberOfToppings = 2;
 const pizzaPlace = "Big Toni's Pizzaria";
 
 console.log("Type of pizzaPlace is a ", typeof pizzaPlace);
@@ -15,10 +15,10 @@ if (numberOfToppings < 10) {
 }
 
 for (toppings = numberOfToppings; toppings <= 10; toppings += 2) {
-    total = toppings;
-    console.log(total);
+  total = toppings;
+  console.log(total);
 }
 
-//for (numberOfToppings = 1; numberOfToppings <= 10; numberOfToppings += 2) {
+//for (numberOfToppings = 2; numberOfToppings <= 10; numberOfToppings += 2) {
 //    total = numberOfToppings;
 //    console.log(total);}

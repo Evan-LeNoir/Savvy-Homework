@@ -1,0 +1,14 @@
+div.navBar {
+    background-color: grey;
+    color: white;
+    height: 50px;
+    width: 150px;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 50px;
+    float: left;
+}
+
+body {
+  background-color: #BC8DA0;
+  }

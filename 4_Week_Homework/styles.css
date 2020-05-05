@@ -1,14 +1,31 @@
-div.navBar {
-    background-color: grey;
-    color: white;
-    height: 50px;
-    width: 150px;
-    border: 1px solid black;
-    text-align: center;
-    line-height: 50px;
-    float: left;
+h1.masterHeader {
+  text-align: center;
 }
 
+.nav-bar {
+  background-color: grey;
+  color: white;
+  height: 50px;
+  width: 150px;
+  border: 1px solid black;
+  text-align: center;
+  line-height: 50px;
+  float: left;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
 body {
-  background-color: #BC8DA0;
+  background-color: lightgrey;
   }

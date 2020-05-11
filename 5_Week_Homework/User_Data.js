@@ -251,6 +251,8 @@ userData.forEach(user => {
 });
 //console.log(`There are ${web_mail.length} entries.`, web_mail);
 
+
+
 // Using .map
 const names = userData.map(user => {
   let mail = user.email; user.website;
@@ -258,3 +260,12 @@ const names = userData.map(user => {
   return {mail, site};
 });
 console.log(names);
+
+
+const maps = [];
+const websiteInfo = userData.map(user => {
+  let event = {email: user.email, site: user.website}; // This method suggested by Brandon. This way I get an object back.
+  maps.push(event);
+})
+
+console.log(maps);

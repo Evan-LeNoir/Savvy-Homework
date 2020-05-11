@@ -1,4 +1,8 @@
-const userData = [
+// https://jsonplaceholder.typicode.com/users
+// fetch('https://jsonplaceholder.typicode.com/users')
+//   .then(response => response.json())
+//   .then(json => console.log(json))
+const data = [
   {
     id: 1,
     name: "Leanne Graham",
@@ -231,20 +235,37 @@ const userData = [
   }
 ];
 
-const allTheNumbers = []; //      prepping an empty array for the newly selected arrays to be pushed to.
-userData.forEach(user => {
-  //                              using .forEach to run over the data and select the necessary keys as denoted below using an arrow syntax
-  let number = user.phone; //     selecting the 'phone' key and saving it to 'number' to be utilized later.
-  allTheNumbers.push(number); //  pushing all the collected data to my new/empty array.
-});
-// console.log(`"The total sum of phone numbers for all users is ${allTheNumbers.length} and are as follows ${allTheNumbers.join(", ")}.`);
-// I'm still not quite understanding the reason for using 'user' as it doesn't seem to correlate to anything within the JSON. Perhaps someone can further explain this to me as to why that is key but I couldn't get the code to work otherwise.
+// using forEach, create a list of cities from the data
 
-const web_mail = [];
-userData.forEach(user => {
-  let proxy = [`${user.name}'s E-Mail & website are ${user.email} ${user.website}`];
-  //let proxy = [user.email, user.website];
-  //let proxy = `User E-Mail: ${user.email}`, `User site: ${user.website}`;
-  web_mail.push(proxy);
+const citiesList = [];
+data.forEach(user => {
+  let city = user.address.city;
+  citiesList.push(city);
 });
-//console.log(`There are ${web_mail.length} entries.`, web_mail);
+console.log(citiesList);
+console.log(citiesList.length);
+
+// create an array of latitude and longitude coordinate pairs
+
+const coords = [];
+data.forEach(user => {
+  let coordinates = [user.address.geo.lat, user.address.geo.lng];
+  coords.push(coordinates);
+});
+console.log(coords);
+console.log(coords.length);
+
+// create an array of strings that combine the company's catchPhrase and bs
+
+const corporateLingo = [];
+data.forEach (user => {
+  let mumboJumbo = `${user.company.catchPhrase} : ${user.company.bs}`;
+  corporateLingo.push(mumboJumbo);
+})
+
+console.log(corporateLingo);
+
+// query the HTML for the class class-week, then use forEach to change the text content
+// document.querySelectorAll(".class-week").forEach(element => {
+//   element.textContent = "Something Else";
+// });

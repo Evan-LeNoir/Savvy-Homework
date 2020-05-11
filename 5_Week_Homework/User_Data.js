@@ -237,7 +237,8 @@ userData.forEach(user => {
   let number = user.phone; //     selecting the 'phone' key and saving it to 'number' to be utilized later.
   allTheNumbers.push(number); //  pushing all the collected data to my new/empty array.
 });
-// console.log(`"The total sum of phone numbers for all users is ${allTheNumbers.length} and are as follows ${allTheNumbers.join(", ")}.`);
+//console.log(`"The total sum of phone numbers for all users is ${allTheNumbers.length} and are as follows ${allTheNumbers.join(", ")}.`);
+//console.log(`typeOf 'const allTheNumbers' is an`, typeof(allTheNumbers));
 // I'm still not quite understanding the reason for using 'user' as it doesn't seem to correlate to anything within the JSON. Perhaps someone can further explain this to me as to why that is key but I couldn't get the code to work otherwise.
 
 const web_mail = [];
@@ -250,22 +251,25 @@ userData.forEach(user => {
   web_mail.push(proxy);
 });
 //console.log(`There are ${web_mail.length} entries.`, web_mail);
-
+//console.log(typeof web_mail);
 
 
 // Using .map
 const names = userData.map(user => {
   let mail = user.email; user.website;
   let site = user.website;
-  return {mail, site};
+  return { mail, site };
 });
 console.log(names);
-
+console.log(typeof names);
 
 const maps = [];
 const websiteInfo = userData.map(user => {
   let event = {email: user.email, site: user.website}; // This method suggested by Brandon. This way I get an object back.
   maps.push(event);
 })
+//console.log(maps);
 
-console.log(maps);
+// using Brandon's method as a single line! returns an object... I think.
+const allTheEmails = userData.map(user => [{email: user.email, site: user.website}]);
+//console.log(`Using Brandon's method.`, typeof(allTheEmails), allTheEmails);

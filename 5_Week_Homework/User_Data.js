@@ -242,9 +242,19 @@ userData.forEach(user => {
 
 const web_mail = [];
 userData.forEach(user => {
+  // I've come up with some various ways to parse the data below to try and exercise how flexible my knowledge is with .forEach. Simply rotate out the comments so only one var is active at a time and the function will operate correctly.
+
   let proxy = [`${user.name}'s E-Mail & website are ${user.email} ${user.website}`];
   //let proxy = [user.email, user.website];
-  //let proxy = `User E-Mail: ${user.email}`, `User site: ${user.website}`;
+  //let proxy = `User E-Mail: ${user.email}`, `User Website: ${user.website}`;
   web_mail.push(proxy);
 });
 //console.log(`There are ${web_mail.length} entries.`, web_mail);
+
+// Using .map
+const names = userData.map(user => {
+  let mail = user.email; user.website;
+  let site = user.website;
+  return {mail, site};
+});
+console.log(names);
